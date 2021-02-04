@@ -8,15 +8,15 @@
 
 .button {
   margin-left: 10px;
-  background-color: burlywood;
-}
-
-.button:hover {
-  background-color: rgb(235, 19, 19);
 }
 
 .li {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
+}
+.ul {
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
 }

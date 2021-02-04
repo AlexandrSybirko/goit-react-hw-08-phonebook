@@ -1,9 +1,13 @@
 .filter {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .input {
+  width: 300px;
   border-radius: 10px;
   border-color: rgb(252, 252, 252);
 }

@@ -11,11 +11,14 @@ const value = useSelector(contactsSelectors.getFilter);
   const onChange = e => dispatch(contactsActions.changeFilter(e.target.value));
 
   return (
-    <label className={s.filter}>
+    <>
+      <label className={s.filter}>
     Find contacts by name
     <input className= {s.input} type='text' value={value} onChange={onChange}  placeholder="Go IT"/>
   </label>
+    </>
+    
   );
 };
 
- 
+

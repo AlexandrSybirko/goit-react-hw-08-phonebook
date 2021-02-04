@@ -1,38 +1,31 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { DropdownButton, Dropdown } from 'react-bootstrap'
 
-const styles = {
-  link: {
-    display: 'inline-block',
-    textDecoration: 'none',
-    padding: 12,
-    fontWeight: 700,
-    color: '#2A363B',
-  },
-  activeLink: {
-    color: '#2A363B',
-  },
-};
+
 
 export default function AuthNav() {
   return (
-    <div>
-      <NavLink
+    <div >
+      <DropdownButton id="dropdown-basic-button" title="Авторизация">
+  <Dropdown.Item ><NavLink
         to="/register"
         exact
-        style={styles.link}
-        activeStyle={styles.activeLink}
+        
       >
         Регистрация
-      </NavLink>
-      <NavLink
+      </NavLink></Dropdown.Item>
+  <Dropdown.Item ><NavLink
         to="/login"
         exact
-        style={styles.link}
-        activeStyle={styles.activeLink}
+        
       >
         Логин
-      </NavLink>
+      </NavLink></Dropdown.Item>
+ 
+</DropdownButton>
     </div>
   );
 }
+
+

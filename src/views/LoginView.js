@@ -1,17 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth';
+import { Form, Button } from 'react-bootstrap';
+import s from './Views.module.css';
 
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -37,32 +29,34 @@ export default function LoginView() {
   };
 
   return (
-    <div>
+    <div className={s.form}>
       <h1>Страница логина</h1>
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Почта
-          <input
-            type="email"
-            name="email"
+      <Form onSubmit={handleSubmit} autoComplete="off">
+  <Form.Group controlId="formBasicEmail">
+    <Form.Label>Почта</Form.Label>
+    <Form.Control type="email" placeholder="Enter email" name="email"
             value={email}
-            onChange={handleChange}
-          />
-        </label>
+            onChange={handleChange}/>
+    <Form.Text className="text-muted">
+      We'll never share your email with anyone else.
+    </Form.Text>
+  </Form.Group>
 
-        <label style={styles.label}>
-          Пароль
-          <input
-            type="password"
-            name="password"
+  <Form.Group controlId="formBasicPassword">
+    <Form.Label>Пароль</Form.Label>
+    <Form.Control type="password" placeholder="Password"  name="password"
             value={password}
-            onChange={handleChange}
-          />
-        </label>
+            onChange={handleChange}/>
+  </Form.Group>
+  
+  <Button variant="primary" type="submit">
+    Войти
+  </Button>
+</Form>
 
-        <button type="submit">Войти</button>
-      </form>
+      
     </div>
   );
 }
+

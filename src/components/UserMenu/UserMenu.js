@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { authSelectors, authOperations } from '../../redux/auth';
+import { Button } from 'react-bootstrap';
 
 
 const styles = {
@@ -11,6 +12,7 @@ const styles = {
   name: {
     fontWeight: 700,
     marginRight: 12,
+    color: 'white',
   },
 };
 
@@ -23,9 +25,8 @@ export default function UserMenu() {
     <div style={styles.container}>
      
       <span style={styles.name}>Добро пожаловать, {name}</span>
-      <button type="button" onClick={() => dispatch(authOperations.logOut())}>
-        Выйти
-      </button>
+      <Button variant="danger" type="button" onClick={() => dispatch(authOperations.logOut())}>Выйти</Button>
+      
     </div>
   );
 }

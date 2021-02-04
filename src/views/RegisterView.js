@@ -1,17 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth';
+import { Form, Button } from 'react-bootstrap';
+import s from './Views.module.css';
 
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
 
 export default function RegisterView() {
   const dispatch = useDispatch();
@@ -41,37 +33,38 @@ export default function RegisterView() {
   };
 
   return (
-    <div>
+    <div className={s.form}>
       <h1>Страница регистрации</h1>
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Имя
-          <input type="text" name="name" value={name} onChange={handleChange} />
-        </label>
-
-        <label style={styles.label}>
-          Почта
-          <input
-            type="email"
-            name="email"
+      <Form onSubmit={handleSubmit} autoComplete="off">
+        <Form.Group controlId="formBasicName">
+    <Form.Label>Имя</Form.Label>
+    <Form.Control type="text" placeholder="Enter email" name="name" value={name} onChange={handleChange}/>
+  
+  </Form.Group>
+  <Form.Group controlId="formBasicEmail">
+    <Form.Label>Почта</Form.Label>
+    <Form.Control type="email" placeholder="Enter email" name="email"
             value={email}
-            onChange={handleChange}
-          />
-        </label>
+            onChange={handleChange}/>
+    <Form.Text className="text-muted">
+      We'll never share your email with anyone else.
+    </Form.Text>
+  </Form.Group>
 
-        <label style={styles.label}>
-          Пароль
-          <input
-            type="password"
-            name="password"
+  <Form.Group controlId="formBasicPassword">
+    <Form.Label>Пароль</Form.Label>
+    <Form.Control type="password" placeholder="Password"  name="password"
             value={password}
-            onChange={handleChange}
-          />
-        </label>
-
-        <button type="submit">Зарегистрироваться</button>
-      </form>
+            onChange={handleChange}/>
+  </Form.Group>
+  
+  <Button variant="primary" type="submit">
+          Зарегистрироваться
+  </Button>
+        </Form>
     </div>
   );
 }
+
+

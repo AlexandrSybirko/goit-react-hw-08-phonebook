@@ -1,0 +1,39 @@
+.form {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #55d1f0;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  max-width: 1500px;
+  border-radius: 10%;
+  border-width: 20px;
+  margin-bottom: 700px;
+}
+
+.textphonebook {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  max-width: 300px;
+  text-align: center;
+  color: #55d1f0;
+  background: #272320;
+  border-style: solid;
+  border-radius: 20%;
+  font-weight: 700;
+}
+.textcontacts {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 30px;
+}
